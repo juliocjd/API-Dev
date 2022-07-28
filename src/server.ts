@@ -1,12 +1,12 @@
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
-import { routes } from "./routes";
+import { routerDevelopers } from "./routes/developers.routes";
 
 const app = express();
 
 app.use(express.json());
 
-app.use(routes);
+app.use(routerDevelopers);
 
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
   if (err instanceof Error) {
